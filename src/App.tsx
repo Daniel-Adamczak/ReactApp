@@ -1,7 +1,16 @@
+import { Footer } from "./components/UI/Footer/Footer";
+import { Header } from "./components/UI/Header/Header";
+import { Main } from "./components/UI/Main/Main";
+
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="w-full h-[100vh] bg-black">
+<Header />
+<Main />
+<Footer />
+
+
+    </div>
   )
 }
