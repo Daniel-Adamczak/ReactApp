@@ -1,24 +1,22 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { BlogPage } from './pages/BlogPage';
-import { RecipesPage } from './pages/RecipesPage';
-import { UsersPage } from './pages/UsersPage';
-import { ProductsPage } from './pages/ProductsPage';
-import { HomePage } from './pages/HomePage';
+import { BlogPage } from './pages/Blog/BlogPage';
+import { RecipesPage } from './pages/Recipes/RecipesPage';
+import { UsersPage } from './pages/Users/UsersPage';
+import { ProductsPage } from './pages/Products/ProductsPage';
+import { HomePage } from './pages/Home/HomePage';
 
 export const Main = () => {
   return (
     <main className=' '>
-      
-        <Routes>
+      <Routes>
         <Route path='/' element={<HomePage />} />
-          <Route path='/blog' element={<BlogPage />} />
-          <Route path='/products' element={<ProductsPage />} />
-          <Route path='/users' element={<UsersPage />} />
-          <Route path='/recipes' element={<RecipesPage />} />
-        </Routes>
-     
+        <Route path='/blog' element={<BlogPage />} />
+        <Route path='/products' element={<ProductsPage />} />
+        <Route path='/users' element={<UsersPage />} />
+        <Route path='/recipes' element={<RecipesPage />} />
+      </Routes>
     </main>
   );
 };

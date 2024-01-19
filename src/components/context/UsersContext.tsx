@@ -62,3 +62,25 @@ type AddressType = {
     userAgent: string;
   };
   
+  export type UserContextType = {
+
+  }
+
+  const UserContext = createContext<UserContextType | undefined>(undefined);
+
+  type UserProviderType = {
+    children: React.ReactNode;
+  };
+
+  export const useUser = () => {
+    const context = useContext(UserContext);
+    if (!context) {
+      throw new Error('Oops, there is an error with applying context');
+    }
+    return context;
+  };
+
+  export const BlogProvider = ({ children }: UserProviderType) => {
+
+    
+  }
