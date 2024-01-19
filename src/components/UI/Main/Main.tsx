@@ -1,14 +1,24 @@
-import React from 'react'
-import { SideBar } from './sidebar/SideBar'
-import { MainContent } from './mainContent/MainContent'
+import React from 'react';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BlogPage } from './pages/BlogPage';
+import { RecipesPage } from './pages/RecipesPage';
+import { UsersPage } from './pages/UsersPage';
+import { ProductsPage } from './pages/ProductsPage';
+import { HomePage } from './pages/HomePage';
 
 export const Main = () => {
   return (
-    <main className=' grid grid-cols-4 '>
-      <div className=' col-span-1'><SideBar /></div>
-       <div className='col-span-3 bg-red-800 '><MainContent /></div> 
-       
-        
+    <main className=' '>
+      
+        <Routes>
+        <Route path='/' element={<HomePage />} />
+          <Route path='/blog' element={<BlogPage />} />
+          <Route path='/products' element={<ProductsPage />} />
+          <Route path='/users' element={<UsersPage />} />
+          <Route path='/recipes' element={<RecipesPage />} />
+        </Routes>
+     
     </main>
-  )
-}
+  );
+};
