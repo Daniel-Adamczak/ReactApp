@@ -61,6 +61,69 @@ type AddressType = {
     ssn: string;
     userAgent: string;
   };
+
+
+  export const emptyUser: UserType = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    maidenName: '',
+    age: 0,
+    gender: '',
+    email: '',
+    phone: '',
+    username: '',
+    password: '',
+    birthDate: '',
+    image: '',
+    bloodGroup: '',
+    height: 0,
+    weight: 0,
+    eyeColor: '',
+    hair: {
+        color: '',
+        type: ''
+    },
+    domain: '',
+    ip: '',
+    address: {
+        address: '',
+        city: '',
+        coordinates: {
+            lat: 0,
+            lng: 0
+        },
+        postalCode: '',
+        state: ''
+    },
+    macAddress: '',
+    university: '',
+    bank: {
+        cardExpire: '',
+        cardNumber: '',
+        cardType: '',
+        currency: '',
+        iban: ''
+    },
+    company: {
+        address: {
+            address: '',
+            city: '',
+            coordinates: {
+                lat: 0,
+                lng: 0
+            },
+            postalCode: '',
+            state: ''
+        },
+        department: '',
+        name: '',
+        title: ''
+    },
+    ein: '',
+    ssn: '',
+    userAgent: ''
+};
   
   export type UserContextType = {
 
@@ -81,6 +144,18 @@ type AddressType = {
   };
 
   export const BlogProvider = ({ children }: UserProviderType) => {
+    const []=useState()
 
-    
+    // useEffect(() => {
+    //   fetch('https://jsonplaceholder.typicode.com/users')
+    //     .then((response) => response.json())
+    //     .then((data) => setCommentsList(data))
+    //     .catch(error => console.error('Error fetching comments:', error));
+    // }, []);
+
+    return (
+      <UserContext.Provider value={{}}>
+        {children}
+      </UserContext.Provider>
+    )
   }
