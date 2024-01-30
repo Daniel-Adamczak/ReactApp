@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FormInput } from './FormInput';
 import { useUser } from '../../../../context/UsersContext';
-import { UserType } from '../../../../context/UsersContext';
+
 
 export const RegisterForm = () => {
-  const { registeredUser, setRegisteredUser } = useUser();
+  const { user, setAuthenticatedUser } = useUser();
   const [username, setUsername] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -14,16 +14,16 @@ export const RegisterForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
 
   useEffect(() => {
-    if (registeredUser) {
-      setUsername(registeredUser.username);
-      setFirstName(registeredUser.firstName);
-      setLastName(registeredUser.lastName);
-      setEmail(registeredUser.email);
-      setAge(String(registeredUser.age)); 
-      setPassword(registeredUser.password);
-      setRepeatPassword(registeredUser.password);
+    if (user) {
+      setUsername(user.username);
+      setFirstName(user.firstName);
+      setLastName(user.lastName);
+      setEmail(user.email);
+      setAge(String(user.age)); 
+      setPassword(user.password);
+      setRepeatPassword(user.password);
     }
-  }, [registeredUser]);
+  }, [user]);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ export const RegisterForm = () => {
         return res.json();
       })
       .then((data) => {
-        setRegisteredUser(data);
+        setAuthenticatedUser(data);
         console.log(data);
       })
       .catch((error) => {

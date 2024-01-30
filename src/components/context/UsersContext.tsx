@@ -64,12 +64,26 @@ export type UserType = {
 
 type UserContextType = {
   setUsersId: React.Dispatch<React.SetStateAction<number | undefined>>;
-  registeredUser: UserType | undefined;
-  setRegisteredUser: React.Dispatch<React.SetStateAction<UserType | undefined>>;
-  authenticatedUser: UserType |undefined;
-  setAuthenticatedUser: React.Dispatch<React.SetStateAction<UserType | undefined>>;
+  user: UserType | undefined;
+  setUser: React.Dispatch<React.SetStateAction<UserType | undefined>>;
+  authenticatedUser: AuthUserType | undefined;
+  setAuthenticatedUser: React.Dispatch<
+    React.SetStateAction<AuthUserType | undefined>
+  >;
+  loggedInUser: UserType | undefined;
+  setLoggedInUser: React.Dispatch<React.SetStateAction<UserType | undefined>>;
 };
 
+type AuthUserType = {
+  id: number;
+  username: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  gender: 'male' | 'female'; // If gender can only be 'male' or 'female'
+  image: string;
+  token: string;
+};
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
@@ -87,16 +101,45 @@ export const useUser = () => {
 
 export const UserProvider = ({ children }: UserProviderType) => {
   const [usersId, setUsersId] = useState<number | undefined>();
-  const [registeredUser, setRegisteredUser] = useState<UserType | undefined>();
-  const [authenticatedUser,setAuthenticatedUser]=useState<UserType | undefined>()
+  const [user, setUser] = useState<UserType | undefined>();
+  const [authenticatedUser, setAuthenticatedUser] = useState<
+    AuthUserType | undefined
+  >();
+  const [loggedInUser, setLoggedInUser] = useState<UserType | undefined>();
 
   useEffect(() => {
     if (usersId) {
       fetch(`https://dummyjson.com/users/${usersId}`)
-        .then(res => res.json())
-        .then(data => setRegisteredUser(data));
+        .then((res) => res.json())
+        .then((data) => setUser(data));
     }
   }, [usersId]);
 
-  return <UserContext.Provider value={{ setUsersId, registeredUser, setRegisteredUser,authenticatedUser,setAuthenticatedUser }}>{children}</UserContext.Provider>;
+  useEffect(() => {
+    if (authenticatedUser) {
+      fetch('https://dummyjson.com/user/me', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${authenticatedUser.token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setLoggedInUser(data));
+    }
+  }, [authenticatedUser]);
+
+  return (
+    <UserContext.Provider
+      value={{
+        setUsersId,
+        user,
+        setUser,
+        authenticatedUser,
+        setAuthenticatedUser,
+        loggedInUser,
+        setLoggedInUser,
+      }}>
+      {children}
+    </UserContext.Provider>
+  );
 };

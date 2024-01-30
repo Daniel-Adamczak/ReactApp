@@ -7,7 +7,7 @@ export const BlogMainContent = () => {
 
   return (
     <section>
-      <SinglePost selectedPost={selectedPost} />
+      {selectedPost&&<SinglePost selectedPost={selectedPost} />}
     </section>
   );
 };
