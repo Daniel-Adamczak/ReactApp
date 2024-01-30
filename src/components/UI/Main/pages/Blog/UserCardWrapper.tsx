@@ -20,11 +20,14 @@ export const UserCardWrapper: React.FC<UserCardProps> = ({
   }, [userId]);
   return (
     <div className='bg-slate-700 text-slate-400 rounded-xl p-3 m-2  '>
-      <div className='flex flex-row gap-3 border-b-slate-400 border-b mb-2'>
+      <div className='flex flex-row gap-3 border-b-slate-400 border-b mb-2 align-bottom'>
         <img src={author.image} alt='' className='h-8' />
         <h2 className='text-2xl font-bold'>{author.username}</h2>
+        <span className='flex font-light text-lg'>
+          {author.firstName + ' ' + author.lastName}
+        </span>
       </div>
-      
+
       {children}
     </div>
   );

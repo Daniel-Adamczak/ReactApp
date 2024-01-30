@@ -1,14 +1,13 @@
-
 import { useBlog } from '../../../../context/BlogContext';
 
 import { SinglePost } from './SinglePost';
 
 export const BlogMainContent = () => {
-  const {  post: selectedPost } = useBlog();
+  const { post: selectedPost } = useBlog();
 
   return (
     <section>
-      <SinglePost selectedPost={selectedPost}/>
+      <SinglePost selectedPost={selectedPost} />
     </section>
   );
 };

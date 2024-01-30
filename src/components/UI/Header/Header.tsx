@@ -1,7 +1,9 @@
-import React from 'react'
-import { Navbar } from './navigation/Navbar'
 
+import { Navbar } from './navigation/Navbar'
+import { ManageAccount } from './ManageAccount';
+import { useUser } from '../../context/UsersContext';
 export const Header = () => {
+  const {authenticatedUser}=useUser();
   return (
     <header className='flex flex-row justify-between text-slate-400 p-3 shadow-[0_0_20px_gray] mb-4'>
       <div className='flex flex-row gap-3'>
@@ -14,6 +16,8 @@ export const Header = () => {
         
         <h1>My company</h1>
         <Navbar />
+        {authenticatedUser&& <ManageAccount />}
+        
     </header>
   )
 }
