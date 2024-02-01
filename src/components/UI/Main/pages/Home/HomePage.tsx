@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useUser } from '../../../../context/UsersContext';
 import { RegisterForm } from './RegisterForm';
 import { GetRandomUserData } from './GetRandomUserData';

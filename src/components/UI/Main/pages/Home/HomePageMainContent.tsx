@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Card } from './Card';
 import { Link } from 'react-router-dom';
-import BlogIcon from './../../../../../../public/chef.png';
+
 export const HomePageMainContent = () => {
   return (
     <div className='flex flex-row gap-5 flex-wrap justify-around items-center'>

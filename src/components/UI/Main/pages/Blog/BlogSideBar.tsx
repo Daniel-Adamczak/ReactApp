@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useBlog } from '../../../../context/BlogContext';
 export const BlogSideBar = () => {
   const {
@@ -10,7 +10,7 @@ export const BlogSideBar = () => {
   if (!postsList) return <h3>Loading...</h3>;
 
   return (
-    <div className='bg-transparent p-2 border border-2 border-slate-700 rounded-md shadow-md '>
+    <div className='bg-transparent p-2  border-2 border-slate-700 rounded-md shadow-md '>
       <div className='p-1  text-gray-400 text-2xl font-semibold m-1 rounded-xl capitalize '>
         Recent Posts:
       </div>
