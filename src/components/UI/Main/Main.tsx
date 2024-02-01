@@ -1,6 +1,6 @@
 
 
-import { HashRouter as  Routes, Route } from 'react-router-dom';
+import {   Routes, Route } from 'react-router-dom';
 import { BlogPage } from './pages/Blog/BlogPage';
 import { RecipesPage } from './pages/Recipes/RecipesPage';
 import { UsersPage } from './pages/Users/UsersPage';
