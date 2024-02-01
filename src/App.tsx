@@ -8,7 +8,7 @@ import {UserProvider} from './components/context/UsersContext'
 
 export default function App() {
   return (
-    <Router basename='/ReactApp'>
+    <Router >
       <div className='w-full min-h-[100vh] bg-black flex flex-col'>
         <UserProvider>
         <Header />
