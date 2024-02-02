@@ -10,7 +10,7 @@ export default function App() {
     // <Router>
       <div className='w-full min-h-[100vh] bg-black flex flex-col'>
         <UserProvider>
-          <Header />
+          {/* <Header /> */}
           <BlogProvider>
             <Main />
           </BlogProvider>
