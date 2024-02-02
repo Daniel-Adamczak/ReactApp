@@ -67,7 +67,7 @@ export const BlogProvider = ({ children }: BlogProviderType) => {
     const fetchPosts = async () => {
       try {
         const response = await fetch(
-          `https:dummyjson.com/posts?limit=10&skip=${(pageNumber - 1) * 10}&select=title,reactions,userId`
+          `https://dummyjson.com/posts?limit=10&skip=${(pageNumber - 1) * 10}&select=title,reactions,userId`
         );
         if (!response.ok) {
           throw new Error('Problem fetching posts');

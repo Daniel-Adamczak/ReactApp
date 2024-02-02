@@ -10,7 +10,7 @@ export const BlogPage = () => {
       </div>
       <div className='col-span-3  '>
         <BlogMainContent />
-      </div>{' '}
+      </div>
     </div>
   );
 };

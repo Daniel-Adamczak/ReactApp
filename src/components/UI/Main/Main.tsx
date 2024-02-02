@@ -8,7 +8,7 @@ import { Settings } from './pages/Settings/Settings';
 
 export const Main = () => {
 
-  console.log("Main się renderuje")
+  
   return (
     <main className=' '>
       
