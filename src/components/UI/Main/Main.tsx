@@ -1,20 +1,20 @@
 // import { Routes, Route } from 'react-router-dom';
-import { BlogPage } from './pages/Blog/BlogPage';
-import { RecipesPage } from './pages/Recipes/RecipesPage';
-import { UsersPage } from './pages/Users/UsersPage';
-import { ProductsPage } from './pages/Products/ProductsPage';
+// import { BlogPage } from './pages/Blog/BlogPage';
+// import { RecipesPage } from './pages/Recipes/RecipesPage';
+// import { UsersPage } from './pages/Users/UsersPage';
+// import { ProductsPage } from './pages/Products/ProductsPage';
 import { HomePage } from './pages/Home/HomePage';
-import { Settings } from './pages/Settings/Settings';
+// import { Settings } from './pages/Settings/Settings';
 
 export const Main = () => {
   return (
     <main className=' '>
       <HomePage />
-      <BlogPage />
+      {/* <BlogPage />
       <ProductsPage />
       <UsersPage />
       <RecipesPage />
-      <Settings />
+      <Settings /> */}
       {/* <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/blog' element={<BlogPage />} />
