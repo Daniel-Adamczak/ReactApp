@@ -33,22 +33,46 @@ export const SinglePost: React.FC<SinglePostProps> = ({ selectedPost }) => {
 
   const [comments, setComments] = useState(defaultCommentsResponse);
   useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/posts/${selectedPost}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setCurrentPost(data);
+      } catch (error) {
+        console.error('Error fetching post:', error);
+        
+      }
+    };
+  
     if (selectedPost !== 0) {
-      fetch(`https:dummyjson.com/posts/${selectedPost}`)
-        .then((response) => response.json())
-        .then((data) => setCurrentPost(data))
-        .catch((error) => console.error('Error fetching posts:', error));
+      fetchPost();
     }
   }, [selectedPost]);
+  
 
   useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/posts/${selectedPost}/comments`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setComments(data);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+       
+      }
+    };
+  
     if (selectedPost !== 0) {
-      fetch(`https:dummyjson.com/post/${post.userId}/comments`)
-        .then((response) => response.json())
-        .then((data) => setComments(data))
-        .catch((error) => console.error('Error fetching comments:', error));
+      fetchComments();
     }
-  }, [post]);
+  }, [selectedPost]);
+  
   const toggleComments = () => setShowComments(!showComments);
   return (
     <section>
