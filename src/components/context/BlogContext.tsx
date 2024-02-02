@@ -67,7 +67,9 @@ export const BlogProvider = ({ children }: BlogProviderType) => {
     const fetchPosts = async () => {
       try {
         const response = await fetch(
-          `https://dummyjson.com/posts?limit=10&skip=${(pageNumber - 1) * 10}&select=title,reactions,userId`
+          `https://dummyjson.com/posts?limit=10&skip=${
+            (pageNumber - 1) * 10
+          }&select=title,reactions,userId`
         );
         if (!response.ok) {
           throw new Error('Problem fetching posts');
@@ -82,21 +84,22 @@ export const BlogProvider = ({ children }: BlogProviderType) => {
         }
       }
     };
-  
+
     fetchPosts();
   }, [pageNumber]);
-  
 
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/comments'
+        );
         if (!response.ok) {
           throw new Error('Problem fetching comments');
         }
         const data = await response.json();
         setCommentsList(data);
-      }catch (error) {
+      } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
         } else {
@@ -121,8 +124,7 @@ export const BlogProvider = ({ children }: BlogProviderType) => {
         setPage: setPageNumber,
         error: error,
         setError: setError,
-      }}
-    >
+      }}>
       {children}
     </BlogContext.Provider>
   );
