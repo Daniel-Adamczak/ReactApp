@@ -3,18 +3,15 @@
 // import { RecipesPage } from './pages/Recipes/RecipesPage';
 // import { UsersPage } from './pages/Users/UsersPage';
 // import { ProductsPage } from './pages/Products/ProductsPage';
-import { HomePage } from './pages/Home/HomePage';
+// import { HomePage } from './pages/Home/HomePage';
 // import { Settings } from './pages/Settings/Settings';
 
 export const Main = () => {
+
+  console.log("Main się renderuje")
   return (
     <main className=' '>
-      <HomePage />
-      {/* <BlogPage />
-      <ProductsPage />
-      <UsersPage />
-      <RecipesPage />
-      <Settings /> */}
+      
       {/* <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/blog' element={<BlogPage />} />
