@@ -7,10 +7,10 @@ export const BlogSideBar = () => {
     setPage: setPageNumber,
     page: pageNumber,
   } = useBlog();
-  if (!postsList) return <h3>Loading...</h3>;
+  if (!postsList) return <h3 className='cursor-wait'>Loading...</h3>;
 
   return (
-    <div className='bg-transparent p-2  border-2 border-slate-700 rounded-md shadow-md '>
+    <div className= 'bg-transparent p-2  border-2 border-slate-700 rounded-md shadow-md {'>
       <div className='p-1  text-gray-400 text-2xl font-semibold m-1 rounded-xl capitalize '>
         Recent Posts:
       </div>
@@ -49,7 +49,7 @@ export const BlogSideBar = () => {
       {postsList.posts.map((post) => (
         <h2
           key={post.id}
-          className='p-2 bg-slate-600 text-gray-400 text-xl font-semibold m-2 rounded-xl capitalize hover:text-slate-600 hover:bg-gray-400'
+          className='p-2 bg-slate-600 text-gray-400 text-xl font-semibold m-2 rounded-xl capitalize hover:text-slate-600 hover:bg-gray-400 cursor-pointer'
           onClick={() => setSelectedPost(post.id)}>
           {post.title}
         </h2>

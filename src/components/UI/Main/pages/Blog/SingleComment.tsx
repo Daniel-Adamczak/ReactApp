@@ -19,9 +19,10 @@ interface SingleCommentProps {
 export const SingleComment: React.FC<SingleCommentProps> = ({ comment }) => {
  
  
-  return (
+  return (<div className='ml-10'>
     <UserCardWrapper userId={comment.user.id}>
       <p>{comment.body}</p>
     </UserCardWrapper>
+    </div>
   );
 };
