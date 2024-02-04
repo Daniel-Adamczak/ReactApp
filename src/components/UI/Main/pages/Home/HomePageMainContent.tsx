@@ -8,7 +8,7 @@ export const HomePageMainContent = () => {
       <Card>
         <Link to='/blog'>
           <img
-            src='./../../../../../../public/blog.png'
+            src='/ReactApp/blog.png'
             alt=''
             className='h-52 align-middle'
           />
@@ -21,7 +21,7 @@ export const HomePageMainContent = () => {
       <Card>
         <Link to='/products'>
           <img
-            src='./../../../../../../public/shopping-bag.png'
+            src='/ReactApp/shopping-bag.png'
             alt=''
             className='h-52 align-middle'
           />
@@ -34,7 +34,7 @@ export const HomePageMainContent = () => {
       <Card>
         <Link to='/recipes'>
           <img
-            src='./../../../../../../public/chef.png'
+            src='/ReactApp/chef.png'
             alt=''
             className='h-52 align-middle'
           />
@@ -46,7 +46,7 @@ export const HomePageMainContent = () => {
       <Card>
         <Link to='/users'>
           <img
-            src='./../../../../../../public/group.png'
+            src='/ReactApp/group.png'
             alt=''
             className='h-52 align-middle ml-6'
           />

@@ -8,19 +8,19 @@ export const Header = () => {
     <header className='flex flex-row justify-between text-slate-400 p-3 shadow-[0_0_20px_gray] mb-4 align-text-bottom'>
       <div className='flex flex-row gap-3'>
         <img src='/ReactApp/vite.svg' alt='Vite logo' className='h-7' />
-        <img src='/ReactApp/dist/React.png' alt='React logo' className='h-7' />
+        <img src='/ReactApp/React.png' alt='React logo' className='h-7' />
         <img
-          src='./ReactApp/typescript.svg'
+          src='/ReactApp/typescript.svg'
           alt='TypeScript logo'
           className='h-7'
         />
         <img
-          src='./tailwind.png'
+          src='/ReactApp/tailwind.png'
           alt='Tailwind CSS logo'
           className='h-7'
         />
         <img
-          src='/ReactRouter.png'
+          src='/ReactApp/ReactRouter.png'
           alt='React Router logo'
           className='h-7'
         />
