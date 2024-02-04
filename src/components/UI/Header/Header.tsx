@@ -7,20 +7,20 @@ export const Header = () => {
   return (
     <header className='flex flex-row justify-between text-slate-400 p-3 shadow-[0_0_20px_gray] mb-4 align-text-bottom'>
       <div className='flex flex-row gap-3'>
-        <img src='/assets/vite.svg' alt='Vite logo' className='h-7' />
-        <img src='/assets/React.png' alt='React logo' className='h-7' />
+        <img src='/../public/vite.svg' alt='Vite logo' className='h-7' />
+        <img src='/../public/React.png' alt='React logo' className='h-7' />
         <img
-          src='/assets/typescript.svg'
+          src='/../public/typescript.svg'
           alt='TypeScript logo'
           className='h-7'
         />
         <img
-          src='/assets/tailwind.png'
+          src='/../public/tailwind.png'
           alt='Tailwind CSS logo'
           className='h-7'
         />
         <img
-          src='/assets/ReactRouter.png'
+          src='/../public/ReactRouter.png'
           alt='React Router logo'
           className='h-7'
         />
