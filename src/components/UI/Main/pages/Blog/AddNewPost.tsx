@@ -1,7 +1,13 @@
-import React from 'react'
+import { UserCardWrapper } from './UserCardWrapper';
+import { useUser } from '../../../../context/UsersContext';
 
 export const AddNewPost = () => {
-  return (
-    <div>AddNewPost</div>
-  )
-}
+  const { loggedInUser } = useUser();
+  if (loggedInUser) {
+    return (
+      <UserCardWrapper userId={loggedInUser?.id as number}>
+        
+      </UserCardWrapper>
+    );
+  }
+};

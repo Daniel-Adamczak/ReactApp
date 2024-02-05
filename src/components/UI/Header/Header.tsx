@@ -26,7 +26,7 @@ export const Header = () => {
         />
       </div>
 
-      <h1 className='h-full align-bottom text-2xl'>My company</h1>
+      <h1 className='h-full align-bottom text-2xl'>ReactApp</h1>
       <div className='flex flex-row gap-3'>
         {authenticatedUser && (
           <Link to='/settings'>
